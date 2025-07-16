@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+    <title>Edmonton Smash</title>
+    <style>
+
+        @font-face {
+        font-family: 'Smash';
+        src: url('SmashFont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Bebas Neue', sans-serif;
+      color: #ffffff;
+      background: url('https://cityuniversity.ca/wp-content/uploads/2021/01/iStock-1136615456-1024x681.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.85); /* dark overlay */
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(15, 15, 15, 0.92); /* darker transparent header */
+      padding: 2rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Smash', sans-serif;
+      margin: 0;
+      font-size: 7rem;
+      color: #ff5555;
+    }
+
+    p.description {
+      font-size: 1.2rem;
+      color: #cccccc;
+    }
+
+    .section {
+      padding: 2rem;
+      text-align: center;
+      background-color: rgba(18, 18, 18, 0.85);
+      margin-bottom: 2rem;
+    }
+
+    h2 {
+      color: #ffaa00;
+      margin-bottom: 1rem;
+    }
+
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      padding: 0 2rem;
+    }
+
+    .image-grid a img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    }
+
+    .image-grid a img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 85, 85, 0.6);
+    }
+
+        .tournament-card {
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      overflow: hidden;
+      transition: box-shadow 0.3s;
+    }
+
+    .tournament-card img {
+      width: 100%;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .tournament-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      text-align: left;
+      padding: 0 1rem;
+      background-color: rgba(30, 30, 30, 0.9);
+    }
+
+    .details.open {
+      max-height: 300px;
+      padding: 1rem;
+    }
+
+    .details p {
+      margin: 0.5rem 0;
+      color: #dddddd;
+    }
+
+    .details span {
+      font-weight: bold;
+      color: #ffaa00;
+    }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Edmonton Smash</h1>
+    <p class="description">A family built around the game we love.</p>
+</header>
+
+<section class="section">
+    <h2>Weeklies</h2>
+    <div class="image-grid">
+
+        <!-- Steep Competition -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/807384/image-048fdf8f515ab139a7bace3c34676bf8.png"
+                 alt="Steep Competition"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> Sherwood Parks Weekly Event hosted @ Remedy Cafe! Come for a beginner-friendly experience!</p>
+                <p><span>Location:</span> 200 Festival Ln, Sherwood Park, AB T8A 4Y8, Canada</p>
+                <p><span>Date:</span> Mondays @ 6 PM</p>
+                <p><span>Organizer:</span> SHCL Smash Club</p>
+                <p><span>Discord:</span> @mechanical_man</p>
+                <p><a href="https://start.gg/steep" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+        <!-- NAIT -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/774804/image-f08afa4f6b421327b03cc548c1e03f24.png"
+                 alt="NAIT"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> Weekly NAIT Smash bracket open to the public.</p>
+                <p><span>Location:</span>Room CAT191, 11763 106 St, Edmonton, AB T5G 2R1, Canada</p>
+                <p><span>Date:</span> Tuesdays @ 6 PM</p>
+                <p><span>Organizer:</span> NAIT Smash Club</p>
+                <p><span>Discord:</span> @Deflate</p>
+                <p><a href="https://start.gg/nait-smash" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+        <!-- French Bread Rumble -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/807151/image-22653eeb458517a8d390d592f8105f89.png"
+                 alt="French Bread Rumble"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> A Multi-Bracket event hosted @ The Canadian Icehouse in Downtown Edmonton.</p>
+                <p><span>Location:</span> 10332 103 St NW, Edmonton, AB T5J 0Y9, Canada</p>
+                <p><span>Date:</span> Wednesdays @ 5:30 PM</p>
+                <p><span>Organizer:</span> French Bread Gaming</p>
+                <p><span>Discord:</span> @YaBoiChips</p>
+                <p><a href="https://start.gg/fbr" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+        <!-- U of A Smash -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/775039/image-a4419150c4268bdfbc146df9a1b607ce.png"
+                 alt="U Of A Smash"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> Student-run weekly @ the University of Alberta.</p>
+                <p><span>Location:</span> 11325 89 Ave NW, Edmonton, AB T6G 2J5, Canada</p>
+                <p><span>Date:</span> Fridays @ 6 PM</p>
+                <p><span>Organizer:</span> U of A Smash Club</p>
+                <p><span>Discord:</span> @leeeeroooooooy</p>
+                <p><a href="https://start.gg/uofa" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+        <!-- Last Stock Leduc -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/796505/image-6602786a5a15df873f2e5a0e47b39fd1.png"
+                 alt="Last Stock Leduc"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> A Bi-Weekly in Leduc with Ultimate, Melee and P+.</p>
+                <p><span>Location:</span> 4810 50th Ave, Leduc, AB T9E 6X9, Canada</p>
+                <p><span>Date:</span> Every Other Friday @ 5 PM</p>
+                <p><span>Organizer:</span> Pyjama Sam</p>
+                <p><span>Discord:</span> @superpikachu117</p>
+                <p><a href="https://start.gg/uofa" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <h2>Monthlies</h2>
+    <div class="image-grid">
+
+        <!-- St. Albert Arcade -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/788885/image-cb43359ed8a91e53425a3f4104d06193.png"
+                 alt="St. Albert Arcade"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> A Monthly FREE TO ENTER event hosted at St. Albert alliance church, a great cap to a month with FREE PIZZA</p>
+                <p><span>Location:</span> 200 Villeneuve Rd, St. Albert, AB T8N 3X8, Canada</p>
+                <p><span>Date:</span> Last Friday of the month</p>
+                <p><span>Organizer:</span> Andrew</p>
+                <p><span>Discord:</span> @chrygore</p>
+                <p><a href="https://start.gg/st-albert" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+        <!-- Techchase -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/807142/image-49322faf3363c08090c56af06c532f17.png"
+                 alt="Techchase"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> Alberta’s premier monthly event with top-tier talent. Hosted at The Canadian Icehouse.</p>
+                <p><span>Location:</span> 10332 103 St NW, Edmonton, AB T5J 0Y9, Canada</p>
+                <p><span>Date:</span> Every 3rd Saturday</p>
+                <p><span>Organizer:</span> Titanium</p>
+                <p><span>Discord:</span> @titaniumssb</p>
+                <p><a href="https://start.gg/tcedmonton" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+        <!-- RomHack -->
+        <div class="tournament-card">
+            <img src="https://images.start.gg/images/tournament/805927/image-b677f1af1ec91d363b617e72374cc837.png"
+                 alt="RomHack"
+                 onclick="toggleDetails(this)">
+            <div class="details">
+                <p><span>Description:</span> Retro Monthly with P+, HDR and Melee. Ultimate Side brackets included! Hosted at King Edward Park Community Hall.</p>
+                <p><span>Location:</span> 8008 81 St NW, Edmonton, AB T6C 0S7, Canada</p>
+                <p><span>Date:</span> 2nd Sunday of the month</p>
+                <p><span>Organizer:</span> Jade</p>
+                <p><span>Discord:</span> @tinofsalsa</p>
+                <p><a href="https://start.gg/romhack" target="_blank" style="color: #ffaa00;">View on Start.gg</a></p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+    function toggleDetails(img) {
+      const details = img.nextElementSibling;
+      details.classList.toggle('open');
+    }
+</script>
+</body>
+</html>
